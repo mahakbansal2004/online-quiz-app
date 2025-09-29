@@ -5,6 +5,8 @@ A full-stack web application built for the Verto ASE Challenge, demonstrating co
 ![Project Overview](./images/project.png)
 
 ## Table of Contents
+- [GitHub Repository](#github-repository)
+- [Video Walkthrough](#video-walkthrough)
 - [Challenge Context](#challenge-context)
 - [Project Overview](#project-overview)
 - [Tech Stack](#tech-stack)
@@ -13,8 +15,20 @@ A full-stack web application built for the Verto ASE Challenge, demonstrating co
 - [Database Schema](#database-schema)
 - [API Endpoints](#api-endpoints)
 - [Setup Instructions](#setup-instructions)
+- [How to Run Tests](#how-to-run-tests)
+- [Assumptions and Design Choices](#assumptions-and-design-choices)
 - [Screenshots](#screenshots)
 - [Development Process](#development-process)
+
+## GitHub Repository
+
+Repository: [Add your GitHub repository link here]
+
+Example: https://github.com/mahakbansal2004/online-quiz-app
+
+## Video Walkthrough
+
+Watch the complete project demonstration and technical explanation:
 
 ## Challenge Context
 
@@ -296,6 +310,83 @@ Verify Installation
 1. Open browser to http://localhost:5173
 2. Ensure backend is running at http://localhost:5000
 3. Test by starting a quiz
+
+## How to Run Tests
+
+The backend includes comprehensive test coverage for the scoring logic using Jest and Supertest.
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm test -- --coverage
+
+# Run tests in watch mode
+npm test -- --watch
+```
+
+Test Coverage:
+- API endpoint validation
+- Score calculation accuracy
+- Answer submission handling
+- Edge case scenarios
+
+## Assumptions and Design Choices
+
+Technical Decisions:
+
+1. Database Choice - SQLite
+   - Chosen for simplicity and portability
+   - No separate database server required
+   - Lightweight and perfect for assessment scope
+   - Easy to include in repository for reviewers
+
+2. Timer Implementation
+   - Set to 10 minutes based on standard quiz duration
+   - Auto-submit functionality prevents data loss
+   - Uses setInterval with proper cleanup to avoid memory leaks
+
+3. State Management
+   - Used React hooks (useState, useEffect) for simplicity
+   - No Redux needed for this application scope
+   - Minimal prop drilling with clear component hierarchy
+
+4. Security Considerations
+   - Correct answers excluded from GET /api/questions endpoint
+   - All answer validation performed server-side
+   - Prevents client-side answer manipulation
+
+5. User Experience
+   - Progress bar provides clear visual feedback
+   - Answer selection with immediate visual response
+   - Confirmation dialog before final submission
+   - Responsive design for mobile compatibility
+
+6. Answer Storage Structure
+   - Stored as object with question ID as key
+   - Allows users to skip and return to questions
+   - Easy lookup and modification
+
+7. PDF Generation
+   - Implemented client-side using jsPDF
+   - No server resources needed
+   - Users can save results locally
+
+8. Leaderboard Design
+   - Limited to top 10 for performance
+   - Sorted by score, then timestamp
+   - Includes percentage for better comparison
+
+Assumptions:
+- Users have stable internet connection
+- Modern browser with JavaScript enabled
+- Single user session at a time
+- Questions are predefined in database
+- No authentication required for demo purposes
 
 ## Screenshots
 
