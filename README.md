@@ -22,13 +22,12 @@ A full-stack web application built for the Verto ASE Challenge, demonstrating co
 
 ## GitHub Repository
 
-Repository: [Add your GitHub repository link here]
-
-Example: https://github.com/mahakbansal2004/online-quiz-app
+https://github.com/mahakbansal2004/online-quiz-app
 
 ## Video Walkthrough
 
 Watch the complete project demonstration and technical explanation:
+https://www.loom.com/share/78646d78510e41e283c3b7ee03c01c52?sid=d9cfc5f9-edeb-4e78-8017-36a437fcdba0
 
 ## Challenge Context
 
